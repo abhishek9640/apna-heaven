@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Square Yards - Real Estate & Property</title>
+    <title>Apna Heaven - Real Estate & Property</title>
     <!-- Font Awesome & Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
@@ -85,14 +85,77 @@
             <option>Budget</option>
           </select>
           <select class="input">
-            <option>Property Type</option>
+            <option>Food Available</option>
           </select>
           <select class="input">
-            <option>Possession Status</option>
+            <option>Available For</option>
           </select>
           <button class="btn">Search</button>
         </div>
       </div>
+
+      <section class="hot-projects">
+        <h2 class="section-title">Hot Selling Real Estate Projects in India</h2>
+        <p class="section-description">
+          A handpicked collection of the country's most in-demand residential developments. These properties, from modern apartments to premium villas, offer unmatched value in top cities with ideal locations, smart amenities, and trusted builders.
+        </p>
+
+        <!-- <div class="city-filters">
+          <button class="city-btn active">All</button>
+          <button class="city-btn">Delhi</button>
+          <button class="city-btn">Bangalore</button>
+          <button class="city-btn">Gurgaon</button>
+          <button class="city-btn">Pune</button>
+          <button class="city-btn">Noida</button>
+          <button class="city-btn">Hyderabad</button>
+          <button class="city-btn">Thane</button>
+          <button class="city-btn">Navi Mumbai</button>
+          <button class="city-btn">Chennai</button>
+        </div> -->
+
+        <div class="projects-slider-wrapper">
+          <button class="slider-arrow left" id="sliderLeft"><i class="fa fa-chevron-left"></i></button>
+          <div class="projects-slider" id="projectsSlider">
+            <div class="project-card">
+              <div class="project-number">1</div>
+              <img src="https://static.squareyards.com/resources/images/mumbai/project-image/dlf-the-westpark-project-project-large-image1-8231.jpg?aio=w-931;h-350;crop;" alt="DLF The Westpark" class="project-image">
+              <div class="project-details">
+                <h3 class="project-title">DLF The Westpark</h3>
+                <p class="project-location">Andheri West, Mumbai</p>
+                <p class="project-price">₹ 5.81 Cr to 11.20 Cr</p>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-number">2</div>
+              <img src="https://static.squareyards.com/resources/images/mumbai/project-image/dlf-the-westpark-project-project-large-image1-8231.jpg?aio=w-931;h-350;crop;" alt="Godrej Skyshore" class="project-image">
+              <div class="project-details">
+                <h3 class="project-title">Godrej Skyshore</h3>
+                <p class="project-location">Versova, Mumbai</p>
+                <p class="project-price">₹ 8.25 Cr to 13.75 Cr</p>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-number">3</div>
+              <img src="https://static.squareyards.com/resources/images/mumbai/project-image/dlf-the-westpark-project-project-large-image1-8231.jpg?aio=w-931;h-350;crop;" alt="K Raheja Antares" class="project-image">
+              <div class="project-details">
+                <h3 class="project-title">K Raheja Antares</h3>
+                <p class="project-location">Kanjurmarg West, Mumbai</p>
+                <p class="project-price">₹ 3.23 Cr to 3.75 Cr</p>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-number">4</div>
+              <img src="https://static.squareyards.com/resources/images/mumbai/project-image/dlf-the-westpark-project-project-large-image1-8231.jpg?aio=w-931;h-350;crop;" alt="Godrej Bliss Kandivali" class="project-image">
+              <div class="project-details">
+                <h3 class="project-title">Godrej Bliss Kandivali</h3>
+                <p class="project-location">Kandivali East, Mumbai</p>
+                <p class="project-price">₹ 99.85 Lac to 2.43 Cr</p>
+              </div>
+            </div>
+          </div>
+          <button class="slider-arrow right" id="sliderRight"><i class="fa fa-chevron-right"></i></button>
+        </div>
+      </section>
     </div>
 
     <script>
@@ -104,6 +167,20 @@
           this.querySelector("i").classList.toggle("fa-bars");
           this.querySelector("i").classList.toggle("fa-times");
         });
+
+      // Slider functionality
+      const slider = document.getElementById('projectsSlider');
+      const leftBtn = document.getElementById('sliderLeft');
+      const rightBtn = document.getElementById('sliderRight');
+      let scrollAmount = 0;
+      const cardWidth = 320; // Approximate width of a card + gap
+
+      leftBtn.addEventListener('click', () => {
+        slider.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+      });
+      rightBtn.addEventListener('click', () => {
+        slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
+      });
     </script>
   </body>
 </html>
