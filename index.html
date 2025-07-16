@@ -1,58 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Responsive Real Estate UI</title>
-  <!-- Font Awesome & Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link rel="stylesheet" href="assets/style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Square Yards - Real Estate & Property</title>
+    <!-- Font Awesome & Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav-container">
+        <div class="logo">
+          <a href="/">Apna Heaven</a>
+        </div>
+        <div class="nav-toggle" id="navToggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="#" class="nav-link">City</a></li>
+          <li><a href="#" class="nav-link">Buy</a></li>
+          <li><a href="#" class="nav-link">Rent</a></li>
+          <li><a href="#" class="nav-link">Projects</a></li>
+          <li><a href="#" class="nav-link">Agents</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Resources</a></li>
+          <li><a href="#" class="nav-link nav-button">Sell or Rent Property</a></li>
+        </ul>
+      </nav>
+    </header>
 
-<div class="container">
-  <div>Noida</div>
-  <div class="headline">Real Estate Made Real Easy</div>
-  <div class="subtext">
-    We've got you covered! From finding the perfect property to
-    <span style="color: #cf8bff;">Site Visits</span>
-  </div>
+    <div class="container">
+      <div class="headline">Real Estate Made Real Easy</div>
+      <div class="subtext">
+        We've got you covered! From finding the perfect property to
+        <span style="color: #cf8bff">Financing</span>
+      </div>
 
-  <div class="options">
-    <button class="option-btn"><i class="fa fa-home"></i> Buy</button>
-    <button class="option-btn"><i class="fa fa-door-open"></i> Rental</button>
-    <button class="option-btn"><i class="fa fa-building"></i> Projects</button>
-    <button class="option-btn"><i class="fa fa-bed"></i> PG / Hostels</button>
-    <button class="option-btn"><i class="fa fa-map"></i> Plot & Land</button>
-    <button class="option-btn"><i class="fa fa-store"></i> Commercial</button>
-    <button class="option-btn"><i class="fa fa-user"></i> Agents</button>
-  </div>
+      <div class="options">
+        <button class="option-btn"><i class="fa fa-home"></i> Buy</button>
+        <button class="option-btn">
+          <i class="fa fa-door-open"></i> Rental
+        </button>
+        <button class="option-btn">
+          <i class="fa fa-building"></i> Projects
+        </button>
+        <button class="option-btn">
+          <i class="fa fa-bed"></i> PG / Hostels
+        </button>
+        <button class="option-btn">
+          <i class="fa fa-map"></i> Plot & Land
+        </button>
+        <button class="option-btn">
+          <i class="fa fa-store"></i> Commercial
+        </button>
+        <button class="option-btn"><i class="fa fa-user"></i> Agents</button>
+      </div>
 
-  <div class="search-box">
-    <div class="search-row">
-      <input class="input" type="text" value="Mumbai" readonly />
-      <input class="input" type="text" placeholder="Search by Project, Locality, or Builder" />
-      <div class="search-icons">
-        <i class="fa fa-location-crosshairs"></i>
-        <i class="fa fa-microphone"></i>
+      <div class="search-box">
+        <div class="search-row">
+          <select class="input">
+            <option>Select City</option>
+          </select>
+          <input
+            class="input"
+            type="text"
+            placeholder="Search by Project, Locality, or Builder"
+          />
+          <!-- <div class="search-icons">
+            <i class="fa fa-location-crosshairs"></i>
+            <i class="fa fa-microphone"></i>
+          </div> -->
+        </div>
+
+        <div class="search-row">
+          <select class="input">
+            <option>Budget</option>
+          </select>
+          <select class="input">
+            <option>Property Type</option>
+          </select>
+          <select class="input">
+            <option>Possession Status</option>
+          </select>
+          <button class="btn">Search</button>
+        </div>
       </div>
     </div>
 
-    <div class="search-row">
-      <select class="input">
-        <option>Budget</option>
-      </select>
-      <select class="input">
-        <option>Food Available</option>
-      </select>
-      <select class="input">
-        <option>Available For</option>
-      </select>
-      <button class="btn">Search</button>
-    </div>
-  </div>
-</div>
-
-</body>
+    <script>
+      // Toggle mobile menu
+      document
+        .getElementById("navToggle")
+        .addEventListener("click", function () {
+          document.querySelector(".nav-menu").classList.toggle("active");
+          this.querySelector("i").classList.toggle("fa-bars");
+          this.querySelector("i").classList.toggle("fa-times");
+        });
+    </script>
+  </body>
 </html>
