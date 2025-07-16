@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Listing</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+          <div class="logo"><a href="/">Apna Heaven</a></div>
+          <div class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></div>
+          <ul class="nav-menu">
+            <li><a href="#" class="nav-link">Cities</a></li>
+            <li><a href="#" class="nav-link">Resale Homes</a></li>
+            <li><a href="#" class="nav-link">Sell Property</a></li>
+            <li><a href="#" class="nav-link">Resale Apartments</a></li>
+            <li><a href="#" class="nav-link">Resale Villas</a></li>
+            <li><a href="#" class="nav-link">Commercial Resale</a></li>
+            <li><a href="#" class="nav-link nav-button">List Your Property</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="container">
+    <section class="property-form-section">
+          <div class="property-form-main">
+            <div class="property-form-header">
+              <h3>Add Property Details</h3>
+              <div class="form-help-link">Need help? <a href="#"><i class="fa fa-phone"></i> Get a callback</a></div>
+            </div>
+            <form class="property-form-fields">
+              <input type="text" class="form-input" placeholder="Your Name" />
+              <input type="text" class="form-input" placeholder="Search City" />
+              <div class="form-label">Property Type</div>
+              <div class="property-type-grid" id="propertyTypeGrid">
+                <div class="property-type-card selected" data-value="Apartment"><i class="fa fa-building"></i> Apartment</div>
+                <div class="property-type-card" data-value="Independent House"><i class="fa fa-home"></i> Independent House</div>
+                <div class="property-type-card" data-value="Duplex"><i class="fa fa-layer-group"></i> Duplex</div>
+                <div class="property-type-card" data-value="Independent Floor"><i class="fa fa-th-large"></i> Independent Floor</div>
+                <div class="property-type-card" data-value="Villa"><i class="fa fa-villa"></i> Villa</div>
+                <div class="property-type-card" data-value="Penthouse"><i class="fa fa-city"></i> Penthouse</div>
+                <div class="property-type-card" data-value="Studio"><i class="fa fa-door-open"></i> Studio</div>
+                <div class="property-type-card" data-value="Plot"><i class="fa fa-map"></i> Plot</div>
+                <div class="property-type-card" data-value="Farm House"><i class="fa fa-warehouse"></i> Farm House</div>
+                <div class="property-type-card" data-value="Agricultural Land"><i class="fa fa-tree"></i> Agricultural Land</div>
+              </div>
+              <div class="form-label">Building/Project/Society (Mandatory)</div>
+              <input type="text" class="form-input" value="Select Project" readonly />
+              <div class="form-label">BHK</div>
+              <div class="bhk-btn-group" id="bhkBtnGroup">
+                <button type="button" class="bhk-btn">1 RK</button>
+                <button type="button" class="bhk-btn selected">1 BHK</button>
+                <button type="button" class="bhk-btn">1.5 BHK</button>
+                <button type="button" class="bhk-btn">2 BHK</button>
+                <button type="button" class="bhk-btn">3+ BHK</button>
+              </div>
+              <div class="form-label">Furnish Type</div>
+              <div class="furnish-btn-group" id="furnishBtnGroup">
+                <button type="button" class="furnish-btn"><i class="fa fa-couch"></i> Fully Furnished</button>
+                <button type="button" class="furnish-btn selected"><i class="fa fa-couch"></i> Semi Furnished</button>
+                <button type="button" class="furnish-btn"><i class="fa fa-couch"></i> Unfurnished</button>
+              </div>
+              <input type="text" class="form-input" placeholder="Add Sq.ft" />
+              <!-- <div class="checkbox-row">
+                <input type="checkbox" id="shareWithAgents" class="styled-checkbox"/>
+                <label for="shareWithAgents">Share listing information with agents</label>
+              </div> -->
+              <button type="submit" class="btn next-btn">Next, add price details</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+<script>
+// Dynamic form state
+const formState = {
+  propertyType: 'Apartment',
+  bhk: '1 BHK',
+  areaUnit: 'sq. ft.',
+  furnishType: 'Semi Furnished',
+  shareWithAgents: false
+};
+
+// Property Type selection
+const propertyTypeGrid = document.getElementById('propertyTypeGrid');
+propertyTypeGrid.addEventListener('click', e => {
+  if (e.target.closest('.property-type-card')) {
+    [...propertyTypeGrid.children].forEach(card => card.classList.remove('selected'));
+    const card = e.target.closest('.property-type-card');
+    card.classList.add('selected');
+    formState.propertyType = card.getAttribute('data-value');
+  }
+});
+
+// BHK selection
+const bhkBtnGroup = document.getElementById('bhkBtnGroup');
+bhkBtnGroup.addEventListener('click', e => {
+  if (e.target.classList.contains('bhk-btn')) {
+    [...bhkBtnGroup.children].forEach(btn => btn.classList.remove('selected'));
+    e.target.classList.add('selected');
+    formState.bhk = e.target.textContent.trim();
+  }
+});
+
+// Area Unit dropdown
+const areaUnitSelect = document.getElementById('areaUnitSelect');
+const areaUnitDropdown = document.getElementById('areaUnitDropdown');
+const areaUnitValue = document.getElementById('areaUnitValue');
+areaUnitSelect.addEventListener('click', e => {
+  areaUnitDropdown.style.display = areaUnitDropdown.style.display === 'block' ? 'none' : 'block';
+});
+areaUnitDropdown.addEventListener('click', e => {
+  if (e.target.classList.contains('area-unit-option')) {
+    areaUnitValue.textContent = e.target.textContent;
+    formState.areaUnit = e.target.textContent;
+    areaUnitDropdown.style.display = 'none';
+  }
+});
+document.addEventListener('click', e => {
+  if (!areaUnitSelect.contains(e.target)) {
+    areaUnitDropdown.style.display = 'none';
+  }
+});
+
+// Furnish Type selection
+const furnishBtnGroup = document.getElementById('furnishBtnGroup');
+furnishBtnGroup.addEventListener('click', e => {
+  if (e.target.closest('.furnish-btn')) {
+    [...furnishBtnGroup.children].forEach(btn => btn.classList.remove('selected'));
+    const btn = e.target.closest('.furnish-btn');
+    btn.classList.add('selected');
+    formState.furnishType = btn.textContent.trim();
+  }
+});
+
+// Checkbox
+const shareWithAgents = document.getElementById('shareWithAgents');
+shareWithAgents.addEventListener('change', e => {
+  formState.shareWithAgents = e.target.checked;
+});
+</script>
+</body>
+</html>
