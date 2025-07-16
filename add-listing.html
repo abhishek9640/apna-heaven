@@ -30,43 +30,85 @@
               <div class="form-help-link">Need help? <a href="#"><i class="fa fa-phone"></i> Get a callback</a></div>
             </div>
             <form class="property-form-fields">
-              <input type="text" class="form-input" placeholder="Your Name" />
-              <input type="text" class="form-input" placeholder="Search City" />
-              <div class="form-label">Property Type</div>
-              <div class="property-type-grid" id="propertyTypeGrid">
-                <div class="property-type-card selected" data-value="Apartment"><i class="fa fa-building"></i> Apartment</div>
-                <div class="property-type-card" data-value="Independent House"><i class="fa fa-home"></i> Independent House</div>
-                <div class="property-type-card" data-value="Duplex"><i class="fa fa-layer-group"></i> Duplex</div>
-                <div class="property-type-card" data-value="Independent Floor"><i class="fa fa-th-large"></i> Independent Floor</div>
-                <div class="property-type-card" data-value="Villa"><i class="fa fa-villa"></i> Villa</div>
-                <div class="property-type-card" data-value="Penthouse"><i class="fa fa-city"></i> Penthouse</div>
-                <div class="property-type-card" data-value="Studio"><i class="fa fa-door-open"></i> Studio</div>
-                <div class="property-type-card" data-value="Plot"><i class="fa fa-map"></i> Plot</div>
-                <div class="property-type-card" data-value="Farm House"><i class="fa fa-warehouse"></i> Farm House</div>
-                <div class="property-type-card" data-value="Agricultural Land"><i class="fa fa-tree"></i> Agricultural Land</div>
+              <input type="text" class="form-input" placeholder="Build Up Area*" />
+              <input type="text" class="form-input" placeholder="Age of Property (in years)*" />
+              <div class="form-label">Bathroom*</div>
+              <div class="bhk-btn-group ">Bathroom*</div>
+              <div class="" id="bhkBtnGroup">
+                <button type="button" class="bhk-btn">1</button>
+                <button type="button" class="bhk-btn selected">2</button>
+                <button type="button" class="bhk-btn">3</button>
+                <button type="button" class="bhk-btn">4</button>
               </div>
-              <div class="form-label">Building/Project/Society (Mandatory)</div>
-              <input type="text" class="form-input" value="Select Project" readonly />
-              <div class="form-label">BHK</div>
-              <div class="bhk-btn-group" id="bhkBtnGroup">
-                <button type="button" class="bhk-btn">1 RK</button>
-                <button type="button" class="bhk-btn selected">1 BHK</button>
-                <button type="button" class="bhk-btn">1.5 BHK</button>
-                <button type="button" class="bhk-btn">2 BHK</button>
-                <button type="button" class="bhk-btn">3+ BHK</button>
+              <div class="form-label">Balcony*</div>
+              <div class="bhk-btn-group ">Bathroom*</div>
+              <div class="" id="bhkBtnGroup">
+                <button type="button" class="bhk-btn">1</button>
+                <button type="button" class="bhk-btn selected">2</button>
+                <button type="button" class="bhk-btn">3</button>
+                <button type="button" class="bhk-btn">4</button>
               </div>
+             
+            
               <div class="form-label">Furnish Type</div>
               <div class="furnish-btn-group" id="furnishBtnGroup">
                 <button type="button" class="furnish-btn"><i class="fa fa-couch"></i> Fully Furnished</button>
                 <button type="button" class="furnish-btn selected"><i class="fa fa-couch"></i> Semi Furnished</button>
                 <button type="button" class="furnish-btn"><i class="fa fa-couch"></i> Unfurnished</button>
               </div>
-              <input type="text" class="form-input" placeholder="Add Sq.ft" />
-              <!-- <div class="checkbox-row">
-                <input type="checkbox" id="shareWithAgents" class="styled-checkbox"/>
-                <label for="shareWithAgents">Share listing information with agents</label>
-              </div> -->
-              <button type="submit" class="btn next-btn">Next, add price details</button>
+              <div class="form-label">Preferred Tenant Type</div>
+              <div class="furnish-btn-group" id="furnishBtnGroup">
+                <button type="button" class="furnish-btn"><i class="fa fa-couch"></i> Family</button>
+                <button type="button" class="furnish-btn selected"><i class="fa fa-couch"></i> Bachelors</button>
+                <button type="button" class="furnish-btn"><i class="fa fa-couch"></i> Students</button>
+              </div>
+              <div class="form-label">Select your preference for Bachelors</div>
+              <div class="furnish-btn-group" id="furnishBtnGroup">
+                <button type="button" class="furnish-btn"><i class="fa fa-couch"></i> Open for Both</button>
+                <button type="button" class="furnish-btn"><i class="fa fa-couch"></i> Men Only</button>
+                <button type="button" class="furnish-btn"><i class="fa fa-couch"></i> Women Only</button>
+              </div>
+
+              <!-- New fields start here -->
+              <div class="form-label">Pet Friendly?</div>
+              <div class="furnish-btn-group" id="petFriendlyBtnGroup">
+                <button type="button" class="furnish-btn">Yes</button>
+                <button type="button" class="furnish-btn">No</button>
+              </div>
+              <div class="form-label">Available From*</div>
+              <input type="date" class="form-input" id="availableFromInput" />
+              <div class="form-label">Monthly Rent*</div>
+              <input type="number" class="form-input" placeholder="15000" id="monthlyRentInput" />
+              <div class="form-label">Maintenance Charges*</div>
+              <div class="furnish-btn-group" id="maintenanceBtnGroup">
+                <button type="button" class="furnish-btn">Include in rent</button>
+                <button type="button" class="furnish-btn">Separate</button>
+              </div>
+              <div class="form-label">Security Deposit*</div>
+              <div class="furnish-btn-group" id="securityDepositBtnGroup">
+                <button type="button" class="furnish-btn">None</button>
+                <button type="button" class="furnish-btn">1 month</button>
+                <button type="button" class="furnish-btn">2 month</button>
+                <button type="button" class="furnish-btn">Custom</button>
+              </div>
+              <input type="number" class="form-input" placeholder="Custom Amount" id="customSecurityDepositInput" style="display:none;" />
+              <div class="form-label">Lock-in Period*</div>
+              <div class="furnish-btn-group" id="lockinBtnGroup">
+                <button type="button" class="furnish-btn">None</button>
+                <button type="button" class="furnish-btn">1 month</button>
+                <button type="button" class="furnish-btn">6 month</button>
+                <button type="button" class="furnish-btn">Custom</button>
+              </div>
+              <input type="number" class="form-input" placeholder="Custom Period (months)" id="customLockinInput" style="display:none;" />
+              <div class="form-label">Do you charge brokerage?*</div>
+              <div class="furnish-btn-group" id="brokerageBtnGroup">
+                <button type="button" class="furnish-btn">None</button>
+                <button type="button" class="furnish-btn">15 Days</button>
+                <button type="button" class="furnish-btn">30 Days</button>
+                <button type="button" class="furnish-btn">Custom</button>
+              </div>
+              <input type="number" class="form-input" placeholder="Custom Brokerage (INR)" id="customBrokerageInput" style="display:none;" />
+              <button type="submit" class="btn next-btn">Continue</button>
             </form>
           </div>
         </div>
