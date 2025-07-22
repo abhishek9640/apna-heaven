@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apna Heaven - Resale Property Hub</title>
+    <!-- Fonts & Icons -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+    <style>
+      .dashboard-container {
+        margin-top: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav-container">
+        <div class="logo"><a href="/">Apna Heaven</a></div>
+        <div class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></div>
+        <ul class="nav-menu">
+          <li><a href="#" class="nav-link">Cities</a></li>
+          <li><a href="#" class="nav-link">Resale Homes</a></li>
+          <li><a href="#" class="nav-link">Sell Property</a></li>
+          <li><a href="#" class="nav-link">Resale Apartments</a></li>
+          <li><a href="#" class="nav-link">Resale Villas</a></li>
+          <li><a href="#" class="nav-link">Commercial Resale</a></li>
+          <li>
+            <a href="./add-listing.html" class="nav-link nav-button"
+              >List Your Property</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="dashboard-container">
+      <aside class="filter-sidebar">
+        <div class="filter-section">
+          <h3>Property Filters</h3>
+
+          <div class="filter-group">
+            <label for="propertyType">Property Type</label>
+            <select id="propertyType" name="propertyType">
+              <option value="">All Types</option>
+              <option value="apartment">Apartment</option>
+              <option value="house">House</option>
+              <option value="villa">Villa</option>
+              <option value="commercial">Commercial</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="developer">Developer Name</label>
+            <input
+              type="text"
+              id="developer"
+              name="developer"
+              placeholder="Enter developer name"
+            />
+          </div>
+
+          <div class="filter-group">
+            <label for="location">Location</label>
+            <input
+              type="text"
+              id="location"
+              name="location"
+              placeholder="Enter location"
+            />
+          </div>
+
+          <div class="filter-group">
+            <label>Price Range</label>
+            <div class="range-inputs">
+              <input
+                type="number"
+                id="minPrice"
+                name="minPrice"
+                placeholder="Min"
+              />
+              <span>to</span>
+              <input
+                type="number"
+                id="maxPrice"
+                name="maxPrice"
+                placeholder="Max"
+              />
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <label for="bedrooms">Bedrooms</label>
+            <select id="bedrooms" name="bedrooms">
+              <option value="">Any</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4+</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="bathrooms">Bathrooms</label>
+            <select id="bathrooms" name="bathrooms">
+              <option value="">Any</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4+</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label>Square Footage</label>
+            <div class="range-inputs">
+              <input
+                type="number"
+                id="minSqft"
+                name="minSqft"
+                placeholder="Min"
+              />
+              <span>to</span>
+              <input
+                type="number"
+                id="maxSqft"
+                name="maxSqft"
+                placeholder="Max"
+              />
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <label>Year Built</label>
+            <div class="range-inputs">
+              <input
+                type="number"
+                id="minYear"
+                name="minYear"
+                placeholder="Min"
+              />
+              <span>to</span>
+              <input
+                type="number"
+                id="maxYear"
+                name="maxYear"
+                placeholder="Max"
+              />
+            </div>
+          </div>
+
+          <button class="apply-filters">Apply Filters</button>
+        </div>
+      </aside>
+      <main class="main-content">
+        <div class="property-grid">
+          <!-- Property Card 1 -->
+          <div class="property-card">
+            <div class="property-image-container">
+              <img
+                src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750"
+                alt="Luxury Villa"
+                class="property-image"
+              />
+              <span class="property-tag">Premium</span>
+            </div>
+            <div class="property-details">
+              <div class="property-price">₹2.5 Cr</div>
+              <h3 class="property-title">Modern Luxury Villa with Pool</h3>
+              <div class="property-location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Bandra West, Mumbai</span>
+              </div>
+              <div class="property-specs">
+                <div class="spec-item">
+                  <i class="fas fa-bed"></i>
+                  <span class="spec-value">4 Beds</span>
+                </div>
+                <div class="spec-item">
+                  <i class="fas fa-bath"></i>
+                  <span class="spec-value">3 Baths</span>
+                </div>
+                <div class="spec-item">
+                  <i class="fas fa-vector-square"></i>
+                  <span class="spec-value">3200 sq.ft</span>
+                </div>
+              </div>
+            </div>
+            <div class="property-footer">
+              <div class="property-seller">
+                <img
+                  src="https://i.pravatar.cc/150?img=68"
+                  alt="Seller"
+                  class="seller-avatar"
+                />
+                <span class="seller-name">John Developer</span>
+              </div>
+              <div class="property-actions">
+                <button class="action-button">
+                  <i class="far fa-heart"></i>
+                </button>
+                <button class="action-button">
+                  <i class="fas fa-share"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Property Card 2 -->
+          <div class="property-card">
+            <div class="property-image-container">
+              <img
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+                alt="Modern Apartment"
+                class="property-image"
+              />
+              <span class="property-tag">New</span>
+            </div>
+            <div class="property-details">
+              <div class="property-price">₹1.8 Cr</div>
+              <h3 class="property-title">Sea View Luxury Apartment</h3>
+              <div class="property-location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Marine Drive, Mumbai</span>
+              </div>
+              <div class="property-specs">
+                <div class="spec-item">
+                  <i class="fas fa-bed"></i>
+                  <span class="spec-value">3 Beds</span>
+                </div>
+                <div class="spec-item">
+                  <i class="fas fa-bath"></i>
+                  <span class="spec-value">2 Baths</span>
+                </div>
+                <div class="spec-item">
+                  <i class="fas fa-vector-square"></i>
+                  <span class="spec-value">1800 sq.ft</span>
+                </div>
+              </div>
+            </div>
+            <div class="property-footer">
+              <div class="property-seller">
+                <img
+                  src="https://i.pravatar.cc/150?img=44"
+                  alt="Seller"
+                  class="seller-avatar"
+                />
+                <span class="seller-name">Emma Homes</span>
+              </div>
+              <div class="property-actions">
+                <button class="action-button">
+                  <i class="far fa-heart"></i>
+                </button>
+                <button class="action-button">
+                  <i class="fas fa-share"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Property Card 3 -->
+          <div class="property-card">
+            <div class="property-image-container">
+              <img
+                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c"
+                alt="Premium House"
+                class="property-image"
+              />
+              <span class="property-tag">Featured</span>
+            </div>
+            <div class="property-details">
+              <div class="property-price">₹3.2 Cr</div>
+              <h3 class="property-title">Luxury Penthouse with Terrace</h3>
+              <div class="property-location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Worli, Mumbai</span>
+              </div>
+              <div class="property-specs">
+                <div class="spec-item">
+                  <i class="fas fa-bed"></i>
+                  <span class="spec-value">4 Beds</span>
+                </div>
+                <div class="spec-item">
+                  <i class="fas fa-bath"></i>
+                  <span class="spec-value">4 Baths</span>
+                </div>
+                <div class="spec-item">
+                  <i class="fas fa-vector-square"></i>
+                  <span class="spec-value">2800 sq.ft</span>
+                </div>
+              </div>
+            </div>
+            <div class="property-footer">
+              <div class="property-seller">
+                <img
+                  src="https://i.pravatar.cc/150?img=32"
+                  alt="Seller"
+                  class="seller-avatar"
+                />
+                <span class="seller-name">Luxury Estates</span>
+              </div>
+              <div class="property-actions">
+                <button class="action-button">
+                  <i class="far fa-heart"></i>
+                </button>
+                <button class="action-button">
+                  <i class="fas fa-share"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Property Card 1 -->
+          <div class="property-card">
+            <div class="property-image-container">
+              <img
+                src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750"
+                alt="Luxury Villa"
+                class="property-image"
+              />
+              <span class="property-tag">Premium</span>
+            </div>
+            <div class="property-details">
+              <div class="property-price">₹2.5 Cr</div>
+              <h3 class="property-title">Modern Luxury Villa with Pool</h3>
+              <div class="property-location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Bandra West, Mumbai</span>
+              </div>
+              <div class="property-specs">
+                <div class="spec-item">
+                  <i class="fas fa-bed"></i>
+                  <span class="spec-value">4 Beds</span>
+                </div>
+                <div class="spec-item">
+                  <i class="fas fa-bath"></i>
+                  <span class="spec-value">3 Baths</span>
+                </div>
+                <div class="spec-item">
+                  <i class="fas fa-vector-square"></i>
+                  <span class="spec-value">3200 sq.ft</span>
+                </div>
+              </div>
+            </div>
+            <div class="property-footer">
+              <div class="property-seller">
+                <img
+                  src="https://i.pravatar.cc/150?img=68"
+                  alt="Seller"
+                  class="seller-avatar"
+                />
+                <span class="seller-name">John Developer</span>
+              </div>
+              <div class="property-actions">
+                <button class="action-button">
+                  <i class="far fa-heart"></i>
+                </button>
+                <button class="action-button">
+                  <i class="fas fa-share"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Property Card 2 -->
+          <div class="property-card">
+            <div class="property-image-container">
+              <img
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+                alt="Modern Apartment"
+                class="property-image"
+              />
+              <span class="property-tag">New</span>
+            </div>
+            <div class="property-details">
+              <div class="property-price">₹1.8 Cr</div>
+              <h3 class="property-title">Sea View Luxury Apartment</h3>
+              <div class="property-location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Marine Drive, Mumbai</span>
+              </div>
+              <div class="property-specs">
+                <div class="spec-item">
+                  <i class="fas fa-bed"></i>
+                  <span class="spec-value">3 Beds</span>
+                </div>
+                <div class="spec-item">
+                  <i class="fas fa-bath"></i>
+                  <span class="spec-value">2 Baths</span>
+                </div>
+                <div class="spec-item">
+                  <i class="fas fa-vector-square"></i>
+                  <span class="spec-value">1800 sq.ft</span>
+                </div>
+              </div>
+            </div>
+            <div class="property-footer">
+              <div class="property-seller">
+                <img
+                  src="https://i.pravatar.cc/150?img=44"
+                  alt="Seller"
+                  class="seller-avatar"
+                />
+                <span class="seller-name">Emma Homes</span>
+              </div>
+              <div class="property-actions">
+                <button class="action-button">
+                  <i class="far fa-heart"></i>
+                </button>
+                <button class="action-button">
+                  <i class="fas fa-share"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Property Card 3 -->
+          <div class="property-card">
+            <div class="property-image-container">
+              <img
+                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c"
+                alt="Premium House"
+                class="property-image"
+              />
+              <span class="property-tag">Featured</span>
+            </div>
+            <div class="property-details">
+              <div class="property-price">₹3.2 Cr</div>
+              <h3 class="property-title">Luxury Penthouse with Terrace</h3>
+              <div class="property-location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Worli, Mumbai</span>
+              </div>
+              <div class="property-specs">
+                <div class="spec-item">
+                  <i class="fas fa-bed"></i>
+                  <span class="spec-value">4 Beds</span>
+                </div>
+                <div class="spec-item">
+                  <i class="fas fa-bath"></i>
+                  <span class="spec-value">4 Baths</span>
+                </div>
+                <div class="spec-item">
+                  <i class="fas fa-vector-square"></i>
+                  <span class="spec-value">2800 sq.ft</span>
+                </div>
+              </div>
+            </div>
+            <div class="property-footer">
+              <div class="property-seller">
+                <img
+                  src="https://i.pravatar.cc/150?img=32"
+                  alt="Seller"
+                  class="seller-avatar"
+                />
+                <span class="seller-name">Luxury Estates</span>
+              </div>
+              <div class="property-actions">
+                <button class="action-button">
+                  <i class="far fa-heart"></i>
+                </button>
+                <button class="action-button">
+                  <i class="fas fa-share"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Add more similar cards to complete the 3x3 grid -->
+        </div>
+      </main>
+    </div>
+    <script>
+      document
+        .getElementById("navToggle")
+        .addEventListener("click", function () {
+          document.querySelector(".nav-menu").classList.toggle("active");
+          this.querySelector("i").classList.toggle("fa-bars");
+          this.querySelector("i").classList.toggle("fa-times");
+        });
+
+      const slider = document.getElementById("projectsSlider");
+      const leftBtn = document.getElementById("sliderLeft");
+      const rightBtn = document.getElementById("sliderRight");
+      const cardWidth = 320;
+
+      leftBtn.addEventListener("click", () => {
+        slider.scrollBy({ left: -cardWidth, behavior: "smooth" });
+      });
+      rightBtn.addEventListener("click", () => {
+        slider.scrollBy({ left: cardWidth, behavior: "smooth" });
+      });
+    </script>
+  </body>
+</html>
