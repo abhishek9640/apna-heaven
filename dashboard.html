@@ -6,14 +6,41 @@
     <title>Apna Heaven - Resale Property Hub</title>
     <!-- Fonts & Icons -->
     <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link rel="stylesheet" href="assets/style.css" />
-    
+    <style>
+      .dashboard-container {
+        margin-top: 60px;
+      }
+    </style>
   </head>
   <body>
-    <div class="dashboard-container" style="width: 100%;">
+    <header class="header">
+      <nav class="nav-container">
+        <div class="logo"><a href="/">Apna Heaven</a></div>
+        <div class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></div>
+        <ul class="nav-menu">
+          <li><a href="#" class="nav-link">Cities</a></li>
+          <li><a href="#" class="nav-link">Resale Homes</a></li>
+          <li><a href="#" class="nav-link">Sell Property</a></li>
+          <li><a href="#" class="nav-link">Resale Apartments</a></li>
+          <li><a href="#" class="nav-link">Resale Villas</a></li>
+          <li><a href="#" class="nav-link">Commercial Resale</a></li>
+          <li>
+            <a href="./add-listing.html" class="nav-link nav-button"
+              >List Your Property</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="dashboard-container">
       <aside class="filter-sidebar">
         <div class="filter-section">
           <h3>Property Filters</h3>
